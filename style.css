@@ -1,0 +1,782 @@
+/* style.css */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+body { background-color: #f4f7f6; display: flex; min-height: 100vh; }
+
+.container { display: flex; width: 100%; }
+
+/* Sidebar */
+.sidebar { width: 260px; background-color: #2c3e50; color: white; padding: 25px; flex-shrink: 0; }
+.sidebar .logo h2 { color: #f1c40f; margin-bottom: 30px; border-bottom: 1px solid #444; padding-bottom: 10px; }
+.sidebar ul { list-style: none; }
+.sidebar ul li { padding: 15px; margin-bottom: 8px; border-radius: 10px; transition: 0.3s; }
+.sidebar ul li:hover, .sidebar ul li.active { background-color: #f1c40f; color: #333; }
+.sidebar ul li a { text-decoration: none; color: inherit; font-weight: bold; display: block; }
+
+/* Main Content */
+.content { flex: 1; padding: 40px; position: relative; }
+.header-input { margin-bottom: 30px; }
+.header-input h1 { font-size: 28px; color: #333; }
+.header-input span { display: block; font-size: 16px; color: #777; font-weight: normal; }
+
+/* Cards & Forms */
+.card-main { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); max-width: 500px; margin: 0 auto; z-index: 2; position: relative; }
+input, select { width: 100%; padding: 15px; margin-bottom: 15px; border-radius: 12px; border: 1px solid #ddd; background: #f9f9f9; font-size: 16px; }
+.btn-proses { width: 100%; padding: 15px; border-radius: 30px; border: none; background: #f1c40f; font-weight: bold; font-size: 18px; cursor: pointer; transition: 0.2s; }
+.btn-proses:hover { transform: translateY(-2px); box-shadow: 0 5px 10px rgba(0,0,0,0.1); }
+
+/* Visual Background (Karung) */
+.visual-bg { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; text-align: center; z-index: 1; opacity: 0.8; pointer-events: none; }
+.visual-bg img { max-width: 450px; }
+
+.hidden { display: none; }
+
+
+
+
+body { font-family: sans-serif; margin: 0; background: #f0f2f5; display: flex; }
+.container { display: flex; width: 100%; }
+.sidebar { width: 250px; background: #2c3e50; color: white; min-height: 100vh; padding: 20px; }
+.sidebar ul { list-style: none; padding: 0; }
+.sidebar li { padding: 15px; margin-bottom: 10px; border-radius: 5px; }
+.sidebar li.active { background: #f1c40f; color: #333; }
+.sidebar a { color: inherit; text-decoration: none; font-weight: bold; }
+
+.content { flex: 1; padding: 40px; }
+.card-input { background: white; padding: 40px; border-radius: 15px; max-width: 500px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+.barcode-area { background: #eee; text-align: center; padding: 20px; border-radius: 10px; margin-bottom: 20px; }
+.form-group input { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; }
+.btn-proses { width: 100%; background: #f1c40f; border: none; padding: 15px; font-weight: bold; border-radius: 25px; cursor: pointer; }
+.notif-box { margin-top: 20px; background: #dff0d8; padding: 15px; border-radius: 8px; text-align: center; color: #3c763d; border: 1px solid #d6e9c6; }
+.hidden { display: none; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    display: flex;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+}
+
+.sidebar .logo {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    padding: 15px 10px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.sidebar ul li.active, .sidebar ul li:hover {
+    background-color: #f1c40f;
+    color: #333;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 600;
+}
+
+/* Main Content */
+.content {
+    flex: 1;
+    padding: 40px;
+}
+
+header {
+    margin-bottom: 40px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.menu-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+}
+
+.menu-card .icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    background-color: #f1c40f;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+/* Container Input */
+.input-container {
+    max-width: 600px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.barcode-box {
+    background: #e0e0e0;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.barcode-icon {
+    font-size: 40px;
+    display: block;
+    letter-spacing: 5px;
+}
+
+.btn-scan {
+    background: #ccc;
+    border: none;
+    padding: 8px 20px;
+    margin-top: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Style Form */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #f1c40f;
+    outline: none;
+}
+
+.btn-proses {
+    width: 100%;
+    background-color: #f1c40f;
+    color: #333;
+    border: none;
+    padding: 15px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Toast Message */
+.toast-message {
+    margin-top: 20px;
+    background: #d1d1d1;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    border-left: 5px solid #2ecc71; /* Warna hijau indikator sukses */
+}
+
+.hidden {
+    display: none;
+}
+
+.jual-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(180deg, #ffffff 0%, #ffeaa7 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.form-container-jual {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 50px;
+    z-index: 2;
+}
+
+.custom-select select, .input-jumlah input {
+    width: 100%;
+    padding: 18px;
+    border-radius: 15px;
+    border: none;
+    background: #e9e9e9;
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #666;
+    outline: none;
+}
+
+.btn-proses-jual {
+    width: 100%;
+    padding: 15px;
+    border-radius: 30px;
+    border: none;
+    background-color: #ffcc33; /* Warna Kuning sesuai desain */
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.btn-proses-jual:hover {
+    background-color: #f1c40f;
+    transform: scale(1.02);
+}
+
+/* Penempatan Gambar Karung di Bawah */
+.produk-visual {
+    position: absolute;
+    bottom: -50px;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.produk-visual img {
+    max-width: 500px;
+    opacity: 0.9;
+}
+
+/* Animasi Header */
+.header-input h1 span {
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+    color: #888;
+}
+
+/* Styling Struk */
+.receipt-container {
+    perspective: 1000px;
+    z-index: 2;
+    margin-top: 20px;
+}
+
+.receipt-paper {
+    background: #e0e0e0;
+    width: 300px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Efek Gerigi Atas & Bawah */
+.receipt-paper::before, .receipt-paper::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-size: 20px 20px;
+}
+
+.receipt-paper::before {
+    top: -10px;
+    background-image: linear-gradient(135deg, #e0e0e0 25%, transparent 25%), 
+                      linear-gradient(225deg, #e0e0e0 25%, transparent 25%);
+}
+
+.receipt-paper::after {
+    bottom: -10px;
+    background-image: linear-gradient(45deg, #e0e0e0 25%, transparent 25%), 
+                      linear-gradient(-45deg, #e0e0e0 25%, transparent 25%);
+}
+
+.receipt-header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+    border-bottom: 2px dashed #999;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.receipt-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.batch-info {
+    margin-top: 20px;
+}
+
+.batch-list {
+    text-align: right;
+}
+
+.batch-list strong {
+    display: block;
+}
+
+/* Undo Notification Bar */
+.undo-notification {
+    position: fixed;
+    bottom: 30px;
+    background: #bcbcbc;
+    padding: 15px 30px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+.btn-undo {
+    background: #f1c40f;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Layout Khusus Home */
+.home-bg {
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    z-index: 2;
+}
+
+.big-card {
+    background-color: #d1d1d1; /* Warna abu-abu sesuai desainmu */
+    text-decoration: none;
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.big-card h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.big-card:hover {
+    background-color: #f1c40f; /* Berubah kuning saat diarahkan */
+    transform: scale(1.02);
+}
+
+.home-visual {
+    position: fixed;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    opacity: 0.5;
+}
+
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Background Khusus Home */
+.home-layout {
+    background-color: #f8f9fa;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.home-header {
+    margin-bottom: 50px;
+}
+
+.home-header h1 {
+    font-size: 36px;
+    color: #333;
+}
+
+.home-header p {
+    color: #666;
+    font-size: 18px;
+}
+
+/* Wrapper Kotak-Kotak (Grid) */
+.card-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Kolom Sejajar */
+    gap: 30px;
+}
+
+.menu-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.menu-card:hover {
+    transform: translateY(-10px);
+}
+
+.card-icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.menu-card h3 {
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.menu-card p {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+/* Tombol Kuning */
+.btn-yellow {
+    display: inline-block;
+    background-color: #ffcc00;
+    color: #333;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-yellow:hover {
+    background-color: #e6b800;
+}
+
+/* Latar Belakang Gambar Karung */
+.footer-bg {
+    position: fixed;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    opacity: 0.8;
+}
+
+.footer-bg img {
+    max-width: 800px; /* Ukuran gambar di desktop */
+}
+
+/* Styling Tabel Riwayat */
+.table-container {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-top: 20px;
+}
+
+.riwayat-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.riwayat-table th {
+    padding: 15px;
+    border-bottom: 2px solid #f1f1f1;
+    color: #888;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.riwayat-table td {
+    padding: 15px;
+    border-bottom: 1px solid #f9f9f9;
+    font-size: 16px;
+    color: #333;
+}
+
+.riwayat-table tr:hover {
+    background-color: #fcfcfc;
+}
+
+.btn-print {
+    background-color: #f1c40f;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 12px;
+    transition: 0.2s;
+}
+
+.btn-print:hover {
+    background-color: #d4ac0d;
+}
+
+.header-riwayat h1 span {
+    color: #888;
+    font-weight: normal;
+}
+
+/* Layout Utama untuk Sidebar + Konten */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Tetap di Kiri */
+.sidebar {
+    width: 260px;
+    background-color: #2c3e50;
+    color: white;
+    padding: 25px;
+    position: fixed;
+    height: 100%;
+}
+
+/* Bagian Konten Tengah */
+.main-center {
+    flex: 1;
+    margin-left: 260px; /* Memberi ruang untuk sidebar */
+    display: flex;
+    justify-content: center; /* Mengetengahkan secara horizontal */
+    align-items: center;     /* Mengetengahkan secara vertikal */
+    background-color: #f0f2f5;
+    padding: 20px;
+}
+
+.stok-wrapper {
+    width: 100%;
+    max-width: 500px; /* Batas lebar kotak form */
+    text-align: left;
+}
+
+.stok-wrapper h1 {
+    margin: 15px 0 25px 0;
+    font-size: 28px;
+    color: #333;
+}
+
+/* Kotak Putih (Card) */
+.card-stok {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.barcode-container {
+    background: #f1f1f1;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.btn-scan-gray {
+    display: block;
+    margin: 10px auto 0;
+    background: #d1d1d1;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Form Styling */
+.form-stok input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    background: #f9f9f9;
+    font-size: 16px;
+}
+
+.btn-proses-yellow {
+    width: 100%;
+    padding: 15px;
+    background-color: #f1c40f;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.back-link-yellow {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+}
+
+/* Header Struk */
+.header-struk {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.header-struk h1 { font-size: 32px; margin: 0; }
+.header-struk p { color: #888; margin: 0; }
+
+/* Styling Struk Kertas */
+.receipt-box {
+    background: #e0e0e0; /* Warna abu-abu struk sesuai desain */
+    width: 320px;
+    padding: 40px 20px;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Efek Gerigi Atas & Bawah */
+.receipt-box::before, .receipt-box::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background-size: 20px 20px;
+    background-repeat: repeat-x;
+}
+.receipt-box::before {
+    top: -15px;
+    background-image: linear-gradient(135deg, transparent 50%, #e0e0e0 50%), 
+                      linear-gradient(225deg, transparent 50%, #e0e0e0 50%);
+}
+.receipt-box::after {
+    bottom: -15px;
+    background-image: linear-gradient(45deg, #e0e0e0 50%, transparent 50%), 
+                      linear-gradient(-45deg, #e0e0e0 50%, transparent 50%);
+}
+
+.receipt-header {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom: 2px dashed #999;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.receipt-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+/* Undo Notification Bar */
+.undo-bar {
+    margin-top: 60px;
+    background: #bcbcbc;
+    padding: 15px 40px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.undo-bar span {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.btn-undo {
+    background: #ffcc00;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-undo:hover:not(:disabled) {
+    background: #e6b800;
+}

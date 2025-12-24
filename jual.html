@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Jual Pupuk - PupukKaltim</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <nav class="sidebar">
+            <div class="logo"><h2>PupukKaltim</h2></div>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="stok.html">Stok Pupuk</a></li>
+                <li class="active"><a href="jual.html">Jual Pupuk</a></li>
+                <li><a href="riwayat.html">Riwayat</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-center">
+            <div class="stok-wrapper">
+                <a href="index.html" class="back-link-yellow">← Kembali</a>
+                <h1>Input Pesanan</h1>
+
+                <div class="card-stok">
+                    <div class="form-stok">
+                        <select id="produk">
+                            <option value="" disabled selected>Pilih Produk</option>
+                            <option>ZA SUBSIDI</option>
+                            <option>UREA DAUN BUAH</option>
+                        </select>
+                        <input type="number" placeholder="Jumlah">
+                        <button class="btn-proses-yellow" onclick="prosesPenjualan()">PROSES</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+<script>
+        function prosesPenjualan() {
+            // 1. Ambil data dari inputan kamu
+            const produk = document.getElementById('produk').value; // pastikan id="produk" ada di <select>
+            const jumlah = document.querySelector('input[type="number"]').value;
+            const tanggal = new Date().toLocaleDateString('id-ID'); // Ambil tanggal hari ini
+            const hargaPerZak = 50000; // Contoh harga
+            const totalHarga = parseInt(jumlah) * hargaPerZak;
+
+            // 2. Buat data transaksi dalam bentuk objek
+            const transaksiBaru = {
+                tanggal: tanggal,
+                produk: produk,
+                jumlah: jumlah + " Zak",
+                total: "Rp " + totalHarga.toLocaleString('id-ID')
+            };
+
+            // 3. Simpan ke "Buku Catatan" (LocalStorage)
+            let daftarRiwayat = JSON.parse(localStorage.getItem('riwayatPupuk')) || [];
+            daftarRiwayat.push(transaksiBaru);
+            localStorage.setItem('riwayatPupuk', JSON.stringify(daftarRiwayat));
+
+            // 4. Baru pindah ke halaman struk
+            window.location.href = "struk.html";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Input Stok Pupuk - Desktop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <nav class="sidebar">
+            <div class="logo">
+                <h2>PupukKaltim</h2>
+            </div>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li class="active"><a href="stok.html">Stok Pupuk</a></li>
+                <li><a href="jual.html">Jual Pupuk</a></li>
+                <li><a href="riwayat.html">Riwayat</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-center">
+            <div class="stok-wrapper">
+                <a href="index.html" class="back-link-yellow">← Kembali</a>
+                <h1>Input Pupuk Masuk</h1>
+
+                <div class="card-stok">
+                    <div class="barcode-container">
+                        <img src="https://cdn-icons-png.flaticon.com/512/71/71230.png" alt="barcode" width="80">
+                        <button class="btn-scan-gray">SCAN BARCODE</button>
+                    </div>
+
+                    <div class="form-stok">
+                        <input type="text" placeholder="Kode Pupuk">
+                        <input type="text" placeholder="Nama / Jenis Pupuk">
+                        <input type="number" placeholder="Jumlah (Zak)">
+                        
+                        <button class="btn-proses-yellow">PROSES</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

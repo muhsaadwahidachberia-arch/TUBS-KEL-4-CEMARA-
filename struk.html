@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Penjualan Berhasil - PupukKaltim</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <nav class="sidebar">
+            <div class="logo" onclick="window.location.href='index.html'" style="cursor:pointer">
+                <h2>PupukKaltim</h2>
+            </div>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="stok.html">Stok Pupuk</a></li>
+                <li class="active"><a href="jual.html">Jual Pupuk</a></li>
+                <li><a href="riwayat.html">Riwayat</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-center" style="flex-direction: column;">
+            <div class="header-struk">
+                <h1>Penjualan</h1>
+                <p>Berhasil</p>
+            </div>
+
+            <div class="receipt-box">
+                <div class="receipt-header">RECEIPT</div>
+                <div class="receipt-content">
+                    <div class="receipt-line">
+                        <span>Total :</span>
+                        <strong>Rp. 150.000</strong>
+                    </div>
+                    <div class="receipt-line">
+                        <span>Items :</span>
+                        <strong>3</strong>
+                    </div>
+                    <div class="receipt-line" style="align-items: flex-start;">
+                        <span>Batch :</span>
+                        <div style="text-align: right;">
+                            <strong>#A102</strong>
+                            <strong>#B205</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="undo-bar" id="undoBar">
+                <span>Transaksi Tersimpan !</span>
+                <button class="btn-undo" onclick="cancelUndo()">
+                    UNDO (<span id="count">5</span>s)
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Logika Hitung Mundur (Timer)
+        let timeLeft = 5;
+        const timerLabel = document.getElementById('count');
+        const bar = document.getElementById('undoBar');
+
+        const downloadTimer = setInterval(() => {
+            if(timeLeft <= 0){
+                clearInterval(downloadTimer);
+                bar.style.opacity = "0.6";
+                timerLabel.parentElement.disabled = true;
+                timerLabel.innerText = "0";
+            } else {
+                timerLabel.innerText = timeLeft;
+            }
+            timeLeft -= 1;
+        }, 1000);
+
+        function cancelUndo() {
+            alert("Transaksi Dibatalkan!");
+            window.location.href = 'jual.html';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Riwayat - PupukKaltim</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <nav class="sidebar">
+            <div class="logo"><h2>PupukKaltim</h2></div>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="stok.html">Stok Pupuk</a></li>
+                <li><a href="jual.html">Jual Pupuk</a></li>
+                <li class="active"><a href="riwayat.html">Riwayat</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-center">
+            <div class="stok-wrapper" style="max-width: 800px;"> <h1>Riwayat Transaksi</h1>
+                <div class="card-stok">
+                    <table class="riwayat-table" style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr style="border-bottom: 2px solid #eee; text-align: left;">
+                                <th style="padding: 10px;">Tanggal</th>
+                                <th style="padding: 10px;">Produk</th>
+                                <th style="padding: 10px;">Total</th>
+                                <th style="padding: 10px;">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px;">24/12/2025</td>
+                                <td style="padding: 10px;">ZA SUBSIDI</td>
+                                <td style="padding: 10px;">Rp 150.000</td>
+                                <td style="padding: 10px;"><button class="btn-scan-gray">Detail</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+<script>
+        // Fungsi untuk mengambil data dan menampilkannya di tabel
+        function tampilkanData() {
+            const tabelBody = document.getElementById('tabelBody'); // Pastikan <tbody> kamu punya id="tabelBody"
+            const dataSimpanan = JSON.parse(localStorage.getItem('riwayatPupuk')) || [];
+
+            // Jika tidak ada data
+            if (dataSimpanan.length === 0) {
+                tabelBody.innerHTML = "<tr><td colspan='5' style='text-align:center;'>Belum ada riwayat transaksi</td></tr>";
+                return;
+            }
+
+            // Susun baris tabel dari data yang ada (Urutan terbaru di atas)
+            let html = "";
+            dataSimpanan.reverse().forEach(item => {
+                html += `
+                    <tr>
+                        <td style="padding: 10px;">${item.tanggal}</td>
+                        <td style="padding: 10px;">${item.produk}</td>
+                        <td style="padding: 10px;">${item.jumlah}</td>
+                        <td style="padding: 10px;">${item.total}</td>
+                        <td style="padding: 10px;"><button class="btn-scan-gray">Detail</button></td>
+                    </tr>
+                `;
+            });
+            
+            tabelBody.innerHTML = html;
+        }
+
+        // Jalankan fungsi otomatis saat halaman terbuka
+        window.onload = tampilkanData;
+    </script>
+</body>
+</html>
